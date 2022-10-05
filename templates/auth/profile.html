@@ -1,0 +1,188 @@
+{% extends 'base/mainbase.html' %}
+{% block content %}
+{% load static %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>My Profile</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard_url' %}">Home</a></li>
+              <li class="breadcrumb-item active"><a href="{% url 'profile_url' %}">User Profile</a></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                  {% comment %} src="{{data.profile_pic.url}}" {% endcomment %}
+                       src="{% static 'dist/img/taifa.png' %}"
+                       {% comment %} {% if media.thumbnail %}
+                       <img src="{{media.thumbnail.url}}" width="400px" height="400px">
+                      {% endif %} {% endcomment %}
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center"></h3>
+
+                <p class="text-muted text-center">Network Engineer</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b></b></a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Role</b> <a class="float-right">student</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Borroewd Books</b> <a class="float-right">0</a>
+                  </li>
+                </ul>
+
+                <a href="#" class="btn btn-primary btn-block"><b>More</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- About Me Box -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">About Me</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-user mr-1"></i>My Credentials</strong>
+
+                <p class="text-muted">
+                  <b>Full Name:</b> Idd Alfaja</br>
+                  <b>Email Address:</b> tipm34@gmail.com.
+                </p>
+
+                <hr>
+
+                <strong><i class="fas fa-phone mr-1"></i>Communications</strong>
+
+                <p class="text-muted">
+                  <b>Phone Number:</b> 25570262788</br>
+                  <b>Regitration Number:</b> 1223449jj.
+                </p>
+
+                <hr>
+
+                <strong><i class="fas fa-transgender mr-1"></i>Marital Status</strong>
+
+                <p class="text-muted">
+                  <span class="tag tag-danger"><b>Sex:</b> Male</span></br>
+                  <span class="tag tag-success"><b>Date of birth:</b> 20-04-1993</span>
+                </p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card">
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Update Profile</a></li>
+                </ul>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="tab-pane" id="settings">
+                    <form class="form-horizontal">
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">First Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="FirstName" class="form-control" id="inputName" placeholder="Edward" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Last Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="LastName" class="form-control" id="inputName" placeholder="Idd" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Phone Number</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="PhoneNumber" class="form-control" id="inputName" placeholder="25560141577" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Nida NUmber</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="NidaNumber" class="form-control" id="inputName" placeholder="1990260834556432" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Date of birth</label>
+                        <div class="col-sm-10">
+                          <input type="date" name="Bod" class="form-control" id="inputName" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Gender</label>
+                        <select class="col-sm-10" id="selectGender" name="genderValue">
+                          <option value="1">Male</option>
+                          <option value="1">Female</option>
+                        </select>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Profile Picrure</label>
+                        <div class="col-sm-10">
+                          <input type="file" name="Image" class="form-control" id="inputName" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% endblock content %}
